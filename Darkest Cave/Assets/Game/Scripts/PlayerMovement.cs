@@ -5,27 +5,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
-
-    public bool isJumping;
-    public bool isGrounded;
-    public bool doubleJump;
-
-    public Transform groundCheck;
-    public float groundCheckRadius;
-    public LayerMask collisionLayers;
-
+    public static PlayerMovement instance;
     public Rigidbody2D rb2d;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-
     public CapsuleCollider2D playerCollider;
+    public Transform feetPos;
+    public float checkRadius;
 
-    private Vector3 velocity = Vector3.zero;
-    private float horMovement;
-
-    public static PlayerMovement instance;
+    public float speed;
+    private float moveInput;
+    public bool isGrounded;
+    public LayerMask whatIsGround;
+    public float jumpForce;
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
 
     private void Awake()
     {
@@ -38,28 +33,15 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
     }
 
-
-
-
-    private void Update()
+    private void Start()
     {
-        horMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        rb2d = GetComponent<Rigidbody2D>();
+    }
 
-        if (Input.GetButton("Jump") && isGrounded)
-        {
-            isJumping = true;
-        }
-
-        if (isGrounded)
-        {
-            doubleJump = true;
-        }
-
-        if (Input.GetButtonDown("Jump") && doubleJump)
-        {
-            isJumping = true;
-            doubleJump = false;
-        }
+    private void FixedUpdate()
+    {
+        moveInput = Input.GetAxis("Horizontal");
+        rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
 
         Flip(rb2d.velocity.x);
 
@@ -67,21 +49,31 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", characterVelocity);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
-        
-        MovePlayer(horMovement);
-    }
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-    void MovePlayer(float _horMovement)
-    {
-        Vector3 targetVelocity = new Vector2(_horMovement, rb2d.velocity.y);
-        rb2d.velocity = Vector3.SmoothDamp(rb2d.velocity, targetVelocity, ref velocity, 0.1f);
-    
-        if(isJumping == true)
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
-            rb2d.AddForce(new Vector2(0f, jumpForce));
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb2d.velocity = Vector2.up * jumpForce;
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rb2d.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            } else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
             isJumping = false;
         }
     }
@@ -95,11 +87,5 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
