@@ -22,6 +22,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
+    public bool canDash = true;
+    public float dashingTime;
+    public float dashSpeed;
+    public float dashJumpIncrease;
+    public float timeBtwDashes;
+
     private void Awake()
     {
         if (instance != null)
@@ -60,6 +66,14 @@ public class PlayerMovement : MonoBehaviour
             rb2d.velocity = Vector2.up * jumpForce;
         }
 
+        if (isGrounded)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                DashAbility();
+            }
+        }
+
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {
             if (jumpTimeCounter > 0)
@@ -87,5 +101,25 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+    void DashAbility()
+    {
+        if (canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        speed += dashSpeed;
+        jumpForce += dashJumpIncrease;
+        yield return new WaitForSeconds(dashingTime);
+        speed = 100;
+        jumpForce = 150;
+        yield return new WaitForSeconds(timeBtwDashes);
+        canDash = true;
     }
 }
