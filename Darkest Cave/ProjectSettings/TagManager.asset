@@ -8,6 +8,7 @@ TagManager:
   - PlayerSpawn
   - PlayerRespawn
   - Enemy
+  - Sword
   layers:
   - Default
   - TransparentFX
