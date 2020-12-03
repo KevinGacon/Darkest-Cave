@@ -138,7 +138,12 @@ PrefabInstance:
     - target: {fileID: 6611219698751700523, guid: c0ab06e613ddc1b4b85ef8085a241f15,
         type: 3}
       propertyPath: m_Name
-      value: Coin+1(1)
+      value: Coin+1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611219698751700523, guid: c0ab06e613ddc1b4b85ef8085a241f15,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6611219698751700524, guid: c0ab06e613ddc1b4b85ef8085a241f15,
         type: 3}
@@ -1179,10 +1184,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719118562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.33092, y: -10.1602955, z: 0}
+  m_LocalPosition: {x: -123.8, y: -9.9, z: 0}
   m_LocalScale: {x: 35, y: 35, z: 1}
   m_Children:
   - {fileID: 1070235440}
+  - {fileID: 1789534630}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1207,9 +1213,15 @@ MonoBehaviour:
   jumpModifier: 0.3
   jumpCheckOffset: 0.1
   followEnabled: 1
-  jumpEnabled: 0
+  jumpEnabled: 1
   directionLookEnabled: 1
   damageOnCollison: 1
+  groundCheck: {fileID: 1789534630}
+  groundCheckRadius: 2
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  isGrounded: 0
 --- !u!114 &719118568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2456,6 +2468,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5742727087692505710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1789534629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789534630}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1789534630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789534629}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.055, y: -0.495, z: 0}
+  m_LocalScale: {x: 0.49287772, y: 0.49287772, z: 13.441}
+  m_Children: []
+  m_Father: {fileID: 719118566}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1801237223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,12 +2826,12 @@ PrefabInstance:
     - target: {fileID: 80617209829945225, guid: e66bc930048e21a4ba6eaacb6a82ebc1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.15
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 80617209829945225, guid: e66bc930048e21a4ba6eaacb6a82ebc1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.261439
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 80617209829945225, guid: e66bc930048e21a4ba6eaacb6a82ebc1,
         type: 3}
@@ -2839,7 +2881,12 @@ PrefabInstance:
     - target: {fileID: 80617209829945230, guid: e66bc930048e21a4ba6eaacb6a82ebc1,
         type: 3}
       propertyPath: m_Name
-      value: Coin+100(1)
+      value: Coin+100
+      objectReference: {fileID: 0}
+    - target: {fileID: 80617209829945230, guid: e66bc930048e21a4ba6eaacb6a82ebc1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e66bc930048e21a4ba6eaacb6a82ebc1, type: 3}
@@ -3031,7 +3078,12 @@ PrefabInstance:
     - target: {fileID: 5306206474475387116, guid: 5a8f19931b191d64f89c8e68693d262e,
         type: 3}
       propertyPath: m_Name
-      value: Coin+10(1)
+      value: Coin+10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306206474475387116, guid: 5a8f19931b191d64f89c8e68693d262e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5306206474475387119, guid: 5a8f19931b191d64f89c8e68693d262e,
         type: 3}
