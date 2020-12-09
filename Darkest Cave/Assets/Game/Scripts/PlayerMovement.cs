@@ -46,9 +46,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveInput = Input.GetAxis("Horizontal");
-        rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
-
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveInput = Input.GetAxis("Horizontal");
+            rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
+        } else
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveInput = Input.GetAxis("Horizontal");
+                rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
+            }
+        }
+        
         Flip(rb2d.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb2d.velocity.x);
