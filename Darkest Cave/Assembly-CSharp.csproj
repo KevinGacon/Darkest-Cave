@@ -58,9 +58,11 @@
      <Compile Include="Assets\Game\Scripts\InputManager.cs" />
      <Compile Include="Assets\Game\Scripts\DeathZone.cs" />
      <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\PlayerCombat.cs" />
      <Compile Include="Assets\Game\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\MainMenu\MainMenuScript.cs" />
      <Compile Include="Assets\Game\Scripts\PickUpObject.cs" />
+     <Compile Include="Assets\EnemyHealth.cs" />
      <Compile Include="Assets\Game\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\ReplacePlayerOnFall.cs" />
      <Compile Include="Assets\Prefabs\LoadingScreen\LoaderScript.cs" />
@@ -76,37 +78,37 @@
      <Compile Include="Assets\Game\Scripts\SpawnPlayer.cs" />
      <Compile Include="Assets\Game\Scripts\LoadSpecificScene.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/basti/OneDrive/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/bastien.fardel/Documents/GitHub/Darkest-Cave/Darkest Cave/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
