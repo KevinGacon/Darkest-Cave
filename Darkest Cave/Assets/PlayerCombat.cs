@@ -44,6 +44,9 @@ public class PlayerCombat : MonoBehaviour
                 {
                     AttackDown();
                     nextAttackTime = Time.time + 1f / attackRate;
+                } else
+                {
+                    Debug.Log("You cannot attack underneath your feet while on the ground !");
                 }
             }
         }
