@@ -71,7 +71,6 @@
     <Compile Include="Assets\Game\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Game\Scripts\DontDestroyOnLoadScene.cs" />
     <Compile Include="Assets\Game\Scripts\EnnemyKillSpots.cs" />
-    <Compile Include="Assets\ReplacePlayerOnFall.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerMana.cs" />
