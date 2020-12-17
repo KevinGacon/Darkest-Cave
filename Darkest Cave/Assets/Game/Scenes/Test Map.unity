@@ -1213,7 +1213,7 @@ MonoBehaviour:
   jumpModifier: 0.3
   jumpCheckOffset: 0.1
   followEnabled: 1
-  jumpEnabled: 1
+  jumpEnabled: 0
   directionLookEnabled: 1
   damageOnCollison: 1
   groundCheck: {fileID: 1789534630}
