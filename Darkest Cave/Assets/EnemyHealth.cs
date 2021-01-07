@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
 
+    public GameObject Enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy died !");
 
-        //Disable the enemy
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        Destroy(Enemy);
     }
 }
