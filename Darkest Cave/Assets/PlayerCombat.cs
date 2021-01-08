@@ -22,19 +22,29 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                PlayerMovement.instance.spriteRenderer.flipX = false;
+
+                AttackAnimation();
                 AttackRight();
+                
                 nextAttackTime = Time.time + 1f / attackRate;
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                PlayerMovement.instance.spriteRenderer.flipX = true;
+
+                AttackAnimation();
                 AttackLeft();
+                
                 nextAttackTime = Time.time + 1f / attackRate;
             }
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                AttackAnimation();
                 AttackUp();
+                
                 nextAttackTime = Time.time + 1f / attackRate;
             }
 
@@ -42,7 +52,9 @@ public class PlayerCombat : MonoBehaviour
             {
                 if (PlayerMovement.instance.isGrounded == false)
                 {
+                    AttackAnimation();
                     AttackDown();
+                    
                     nextAttackTime = Time.time + 1f / attackRate;
                 } else
                 {
@@ -118,5 +130,12 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(upAttackPoint.position, attackRange);
         if (downAttackPoint == null) return;
         Gizmos.DrawWireSphere(downAttackPoint.position, attackRange);
+    }
+
+    public void AttackAnimation()
+    {
+        PlayerMovement.instance.enabled = false;
+        PlayerMovement.instance.animator.SetTrigger("Attack");
+        PlayerMovement.instance.enabled = true;
     }
 }
