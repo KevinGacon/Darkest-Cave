@@ -68,7 +68,6 @@
     <Compile Include="Assets\Game\Scripts\ReplacePlayerOnFall.cs" />
     <Compile Include="Assets\Prefabs\LoadingScreen\LoaderScript.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyMovement.cs" />
-    <Compile Include="Assets\Game\Scripts\PauseMenuScript.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Game\Scripts\DontDestroyOnLoadScene.cs" />
     <Compile Include="Assets\Game\Scripts\EnnemyKillSpots.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="Assets\Game\Scripts\Inventory.cs" />
     <Compile Include="Assets\Game\Scripts\SpawnPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\LoadSpecificScene.cs" />
+    <Compile Include="Assets\Game\Scripts\PauseMenuScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Images\ValentinHazel\WorkingSize.txt" />

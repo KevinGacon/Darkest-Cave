@@ -10,6 +10,9 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject SelectMenu;
     public GameObject Commands;
 
+    public GameObject ConfirmTextQuit;
+    public GameObject ConfirmTextMainMenu;
+
     private void Start()
     {
         SelectMenu.SetActive(false);
@@ -56,11 +59,33 @@ public class PauseMenuScript : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        ConfirmTextMainMenu.SetActive(true);
     }
+    public void ConfrimDecisionMainMenuYes()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Resume();
+        ConfirmTextMainMenu.SetActive(false);
+    }
+
+    public void ConfrimDecisionMainMenuNo()
+    {
+        ConfirmTextMainMenu.SetActive(false);
+    }
+
 
     public void Quit()
     {
+        ConfirmTextQuit.SetActive(true);
+    }
+
+    public void ConfrimDecisionQuitYes()
+    {
         Application.Quit();
+    }
+
+    public void ConfrimDecisionQuitNo()
+    {
+        ConfirmTextQuit.SetActive(false);
     }
 }
