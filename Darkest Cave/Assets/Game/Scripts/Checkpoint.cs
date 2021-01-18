@@ -3,6 +3,9 @@
 public class Checkpoint : MonoBehaviour
 {
     private Transform playerSpawn;
+    public Animator animator;
+
+    public Light light;
 
     private void Awake()
     {
@@ -19,6 +22,9 @@ public class Checkpoint : MonoBehaviour
             PlayerHealth.instance.healthbar.SetHealth(PlayerHealth.instance.currentHealth);
             PlayerMana.instance.currentMana = PlayerMana.instance.maxMana;
             PlayerMana.instance.currentManaDisplay.text = PlayerMana.instance.currentMana.ToString();
+
+            animator.SetTrigger("TurnOn");
+            light.enabled = true;
 
             SaveData();
         }
