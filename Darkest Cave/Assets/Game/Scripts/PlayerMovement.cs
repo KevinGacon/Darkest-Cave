@@ -63,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
 
         float characterVelocity = Mathf.Abs(rb2d.velocity.x);
         animator.SetFloat("Speed", characterVelocity);
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            Debug.Log(PlayerPrefs.GetInt("Coins"));
+        }
     }
 
     private void Update()
