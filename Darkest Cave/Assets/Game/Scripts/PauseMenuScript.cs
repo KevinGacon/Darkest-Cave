@@ -13,6 +13,9 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject ConfirmTextQuit;
     public GameObject ConfirmTextMainMenu;
 
+    public GameObject DontDestroyOnloadObject;
+
+
     private void Start()
     {
         SelectMenu.SetActive(false);
@@ -63,6 +66,7 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void ConfrimDecisionMainMenuYes()
     {
+        Destroy(DontDestroyOnloadObject);
         SceneManager.LoadScene("MainMenu");
         Resume();
         ConfirmTextMainMenu.SetActive(false);

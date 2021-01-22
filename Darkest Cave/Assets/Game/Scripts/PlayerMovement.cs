@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     private float moveInput;
-    public bool isGrounded;
+    public bool isGrounded =false;
     public LayerMask whatIsGround;
     public float jumpForce;
     private float jumpTimeCounter;
