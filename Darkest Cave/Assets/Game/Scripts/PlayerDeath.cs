@@ -75,5 +75,7 @@ public class PlayerDeath : MonoBehaviour
         PlayerMovement.instance.playerCollider.enabled = true;
 
         PlayerMovement.instance.enabled = true;
+
+        PlayerDeath.instance.isDead = false;
     }
 }
