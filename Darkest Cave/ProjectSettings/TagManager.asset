@@ -44,12 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 1029056161
-    locked: 0
   - name: Platform
     uniqueID: 2341281323
     locked: 0
+  - name: Player
+    uniqueID: 1029056161
+    locked: 0
   - name: Door
     uniqueID: 2789336481
+    locked: 0
+  - name: background
+    uniqueID: 1403598719
     locked: 0
