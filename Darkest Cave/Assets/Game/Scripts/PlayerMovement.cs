@@ -18,9 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public LayerMask whatIsGround;
     public float jumpForce;
-    private float jumpTimeCounter;
-    public float jumpTime;
-    private bool isJumping;
+    private float jumpCounter = 0;
 
     public bool canDash = true;
     public float dashingTime;
@@ -50,7 +48,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveInput = Input.GetAxis("Horizontal");
             rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
-        } else
+        }
+        else
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -58,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
                 rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
             }
         }
-        
+
         Flip(rb2d.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb2d.velocity.x);
@@ -74,11 +73,22 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
+            jumpCounter = 0;
+            jumpCounter += 1;
             rb2d.velocity = Vector2.up * jumpForce;
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (jumpCounter < 2)
+                {
+                    rb2d.velocity = Vector2.up * jumpForce;
+                    jumpCounter += 1;
+                }
+            }
         }
 
         if (isGrounded)
@@ -88,31 +98,15 @@ public class PlayerMovement : MonoBehaviour
                 DashAbility();
             }
         }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                rb2d.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            } else
-            {
-                isJumping = false;
-            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
     }
 
     void Flip(float _velocity)
     {
-        if(_velocity > 0.1f)
+        if (_velocity > 0.1f)
         {
             spriteRenderer.flipX = false;
-        }else if(_velocity < -0.1F)
+        }
+        else if (_velocity < -0.1F)
         {
             spriteRenderer.flipX = true;
         }
@@ -132,8 +126,8 @@ public class PlayerMovement : MonoBehaviour
         speed += dashSpeed;
         jumpForce += dashJumpIncrease;
         yield return new WaitForSeconds(dashingTime);
-        speed = 100;
-        jumpForce = 150;
+        speed = 140;
+        jumpForce = 260;
         yield return new WaitForSeconds(timeBtwDashes);
         canDash = true;
     }
