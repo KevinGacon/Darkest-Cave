@@ -66,6 +66,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log(PlayerPrefs.GetInt("Coins"));
         }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            Debug.Log(PlayerPrefs.GetInt("LevelNumber"));
+        }
     }
 
     private void Update()

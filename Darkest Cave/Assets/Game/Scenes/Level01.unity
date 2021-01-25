@@ -12985,6 +12985,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4909880515379261164, guid: a258f5822431d174d8cb21f5276b8653,
+        type: 3}
+      propertyPath: levelName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909880515379261164, guid: a258f5822431d174d8cb21f5276b8653,
+        type: 3}
+      propertyPath: levelNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4909880515379261165, guid: a258f5822431d174d8cb21f5276b8653,
         type: 3}
       propertyPath: m_Name
