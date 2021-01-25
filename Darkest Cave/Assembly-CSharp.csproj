@@ -61,6 +61,7 @@
     <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Game\Scripts\Checkpoint.cs" />
+    <Compile Include="Assets\Game\Scripts\SceneManagement.cs" />
     <Compile Include="Assets\MainMenu\MainMenuScript.cs" />
     <Compile Include="Assets\Game\Scripts\PickUpObject.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyHealth.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\Game\Scripts\Inventory.cs" />
     <Compile Include="Assets\Game\Scripts\SpawnPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\LoadSpecificScene.cs" />
-    <Compile Include="Assets\Game\Scripts\SceneManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
