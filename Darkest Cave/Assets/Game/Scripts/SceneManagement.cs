@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public int checkpointNumber;
     void Start()
     {
         if (MainMenuScript.instance.ChargedGame == true)
