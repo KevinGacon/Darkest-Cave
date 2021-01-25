@@ -7,12 +7,19 @@ public class PlayerDeath : MonoBehaviour
 {
     public bool isDead = false;
 
-    private Transform playerSpawn;
+    public Transform playerSpawn;
     public Animator fadeSystem;
 
     private Transform player;
 
     public static PlayerDeath instance;
+
+    private void OnLevelWasLoaded()
+    {
+        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
+        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Awake()
     {
@@ -23,11 +30,6 @@ public class PlayerDeath : MonoBehaviour
         }
 
         instance = this;
-
-
-        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
-        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void Death()
@@ -46,7 +48,11 @@ public class PlayerDeath : MonoBehaviour
         PlayerMovement.instance.enabled = false;
 
         // jouer l'animation d'élimination
-        PlayerMovement.instance.animator.SetTrigger("Death");
+        // PlayerMovement.instance.animator.SetTrigger("Death");
+
+        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
+        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         StartCoroutine(ReplaceDeadPlayer());
 
@@ -73,6 +79,7 @@ public class PlayerDeath : MonoBehaviour
 
         PlayerMovement.instance.rb2d.bodyType = RigidbodyType2D.Dynamic;
         PlayerMovement.instance.playerCollider.enabled = true;
+        
 
         PlayerMovement.instance.enabled = true;
 

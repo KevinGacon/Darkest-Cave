@@ -5,10 +5,21 @@ public class Checkpoint : MonoBehaviour
     private Transform playerSpawn;
     public Animator animator;
 
-    public Light light;
+    public new Light light;
 
+    public int levelNumber;
+
+    public static Checkpoint instance;
     private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+
+        instance = this;
+
         playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
     }
 
