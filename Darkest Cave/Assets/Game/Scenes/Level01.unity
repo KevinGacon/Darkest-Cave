@@ -220,6 +220,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6396797769914112900, guid: 6486d54d5ea8d324982e6ff90b9dd510,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 5504519370309535805, guid: 27164719997666a4a9e61724f1e52038,
+        type: 3}
     - target: {fileID: 6396797771222649569, guid: 6486d54d5ea8d324982e6ff90b9dd510,
         type: 3}
       propertyPath: m_RootOrder
@@ -12969,6 +12975,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 597866129}
     m_Modifications:
+    - target: {fileID: 1124161671443438808, guid: a258f5822431d174d8cb21f5276b8653,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.41553456
+      objectReference: {fileID: 0}
     - target: {fileID: 1124161671443438808, guid: a258f5822431d174d8cb21f5276b8653,
         type: 3}
       propertyPath: m_Enabled
