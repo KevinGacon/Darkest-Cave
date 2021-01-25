@@ -16,6 +16,7 @@ public class LoadSpecificScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerMovement.instance.enabled = false;
             StartCoroutine(loadnextScene());
         }
     }
@@ -25,5 +26,6 @@ public class LoadSpecificScene : MonoBehaviour
         fadeSystem.SetTrigger("FadeIN");
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(sceneName);
+        PlayerMovement.instance.enabled = true;
     }
 }

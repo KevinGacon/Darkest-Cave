@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     public SpriteRenderer graphics;
 
+    public GameObject drop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,12 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy died !");
 
+        GameObject gameobject = Instantiate(drop) as GameObject;
+
+        gameobject.transform.position = this.transform.position;
+
         Destroy(Enemy);
+
     }
 
     public IEnumerator HitAnimation()

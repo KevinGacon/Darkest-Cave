@@ -5,7 +5,7 @@ public class Checkpoint : MonoBehaviour
     private Transform playerSpawn;
     public Animator animator;
 
-    public Light light;
+    public new Light light;
 
     private void Awake()
     {
