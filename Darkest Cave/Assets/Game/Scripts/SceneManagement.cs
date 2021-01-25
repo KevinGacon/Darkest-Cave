@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    void start()
+    public int checkpointNumber;
+    void Start()
     {
-        Inventory.instance.coinsCount = PlayerPrefs.GetInt("Coins");
-        Inventory.instance.coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        if (MainMenuScript.instance.ChargedGame == true)
+        {
+            Inventory.instance.coinsCount = PlayerPrefs.GetInt("Coins");
+            Inventory.instance.coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        }
     }
 }

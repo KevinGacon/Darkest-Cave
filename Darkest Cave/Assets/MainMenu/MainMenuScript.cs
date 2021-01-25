@@ -8,6 +8,22 @@ public class MainMenuScript : MonoBehaviour
     public GameObject ConfirmTextContinue;
     public GameObject ConfirmTextQuit;
 
+    public bool ChargedGame = false;
+
+    public static MainMenuScript instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
+
+
     public void ConfrimDecisionNewGame()
     {
         ConfirmTextNewGame.SetActive(true);
@@ -35,8 +51,7 @@ public class MainMenuScript : MonoBehaviour
     {
         ConfirmTextContinue.SetActive(false);
         SceneManager.LoadScene("Level00");
-        Inventory.instance.coinsCount = PlayerPrefs.GetInt("Coins");
-        Inventory.instance.coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        ChargedGame = true;
     }
 
     public void ConfrimDecisionContinueNo()
