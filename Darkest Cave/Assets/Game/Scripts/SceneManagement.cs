@@ -7,6 +7,9 @@ public class SceneManagement : MonoBehaviour
 {
     public int levelNumber;
 
+    public Transform player;
+    public Transform playerSpawn;
+
     public static SceneManagement instance;
     private void Awake()
     {
@@ -22,6 +25,12 @@ public class SceneManagement : MonoBehaviour
 
     void Start()
     {
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+
+        Vector2 position = new Vector2(PlayerPrefs.GetFloat("PositionX"), PlayerPrefs.GetFloat("PositionY"));
+
         if (MainMenuScript.instance.ChargedGame == true)
         {
             Inventory.instance.coinsCount = PlayerPrefs.GetInt("Coins");
@@ -29,11 +38,8 @@ public class SceneManagement : MonoBehaviour
 
             SceneManager.LoadScene(PlayerPrefs.GetInt("LevelNumber"));
 
-            x = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.x);
-            y = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.y);
-
-             = PlayerPrefs.GetFloat("PositionX"
-             = PlayerPrefs.GetFloat("PositionY"
+            player.position = position;
+            playerSpawn.position = position;
         }
     }
 }
