@@ -31,6 +31,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void ConfrimDecisionNewGameYes()
     {
+        ChargedGame = false;
         ConfirmTextNewGame.SetActive(false);
         SceneManager.LoadScene(1);
     }
@@ -49,9 +50,9 @@ public class MainMenuScript : MonoBehaviour
 
     public void ConfrimDecisionContinueYes()
     {
+        ChargedGame = true;
         ConfirmTextContinue.SetActive(false);
         SceneManager.LoadScene(1);
-        ChargedGame = true;
     }
 
     public void ConfrimDecisionContinueNo()
