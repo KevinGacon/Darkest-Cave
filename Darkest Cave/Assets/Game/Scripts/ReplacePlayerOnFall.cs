@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ReplacePlayerOnFall : MonoBehaviour
 {
-    private Transform playerRespawn;
+    public Transform playerRespawn;
 
     private void Awake()
     {
-        playerRespawn = GameObject.FindGameObjectWithTag("PlayerRespawn").transform;
+        playerRespawn = GameObject.FindGameObjectWithTag("PlayerRespawnOF").transform;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -9,7 +9,7 @@ public class DeathZone : MonoBehaviour
     private void Awake()
     {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
-        playerRespawn = GameObject.FindGameObjectWithTag("PlayerRespawn").transform;
+        playerRespawn = GameObject.FindGameObjectWithTag("PlayerRespawnOF").transform;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
