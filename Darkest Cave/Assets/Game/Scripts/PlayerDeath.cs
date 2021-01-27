@@ -64,6 +64,8 @@ public class PlayerDeath : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         fadeSystem.SetTrigger("FadeIN");
         yield return new WaitForSeconds(1f);
+
+        
         player.position = playerSpawn.position;
     }
 

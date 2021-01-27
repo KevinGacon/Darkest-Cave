@@ -27,6 +27,8 @@ public class Checkpoint : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            SceneManagement.instance.levelNumber = this.levelNumber;
+
             playerSpawn.position = transform.position;
 
             PlayerHealth.instance.currentHealth = PlayerHealth.instance.maxHealth;
@@ -47,5 +49,7 @@ public class Checkpoint : MonoBehaviour
 
         PlayerPrefs.SetFloat("PositionX", playerSpawn.position.x);
         PlayerPrefs.SetFloat("PositionY", playerSpawn.position.y);
+
+        PlayerPrefs.SetInt("LevelNumber", SceneManagement.instance.levelNumber);
     }
 }

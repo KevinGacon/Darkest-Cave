@@ -20,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetMouseButton(1))
             {
                 PlayerMovement.instance.spriteRenderer.flipX = false;
 
@@ -30,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetMouseButton(0))
             {
                 PlayerMovement.instance.spriteRenderer.flipX = true;
 
