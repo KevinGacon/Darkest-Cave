@@ -9,6 +9,7 @@ TagManager:
   - PlayerRespawn
   - DontDestroyOnLoad
   - PlayerRespawnOF
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - ObjectScene
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 
