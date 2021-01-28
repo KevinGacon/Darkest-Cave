@@ -15,7 +15,7 @@ public class ReplacePlayerOnFall : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerRespawn.position = transform.position;
+            playerRespawn.transform.position = this.transform.position;
         }
     }
 }

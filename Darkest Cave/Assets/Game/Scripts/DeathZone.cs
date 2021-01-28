@@ -22,8 +22,25 @@ public class DeathZone : MonoBehaviour
 
     public IEnumerator ReplacePlayer(Collider2D collision)
     {
-        fadeSystem.SetTrigger("FadeIN");
-        yield return new WaitForSeconds(0.8f);
-        collision.transform.position = playerRespawn.position;
+        PlayerHealth.instance.currentHealth = PlayerHealth.instance.currentHealth - 2;
+        PlayerHealth.instance.healthbar.SetHealth(PlayerHealth.instance.currentHealth);
+
+        if (PlayerHealth.instance.currentHealth <= 0)
+        {
+            PlayerDeath.instance.Death();
+        }
+        else
+        {
+            fadeSystem.SetTrigger("FadeIN");
+            yield return new WaitForSeconds(0.8f);
+
+            if (Inventory.instance.coinsCount > 0)
+            {
+                Inventory.instance.coinsCount = Inventory.instance.coinsCount / 2;
+                Inventory.instance.coinsCountText.text = Inventory.instance.coinsCount.ToString();
+            }
+
+            collision.transform.position = playerRespawn.position;
+        }
     }
 }

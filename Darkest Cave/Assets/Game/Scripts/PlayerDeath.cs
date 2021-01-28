@@ -61,7 +61,6 @@ public class PlayerDeath : MonoBehaviour
 
     public IEnumerator ReplaceDeadPlayer()
     {
-        yield return new WaitForSeconds(0.4f);
         fadeSystem.SetTrigger("FadeIN");
         yield return new WaitForSeconds(1f);
 
