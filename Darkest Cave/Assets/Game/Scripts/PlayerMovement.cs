@@ -65,6 +65,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.T))
         {
             Debug.Log(PlayerPrefs.GetInt("Coins"));
+            Debug.Log(PlayerPrefs.GetFloat("PositionX"));
+            Debug.Log(PlayerPrefs.GetFloat("PositionY"));
+        }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            Debug.Log(PlayerPrefs.GetInt("LevelNumber"));
         }
     }
 
